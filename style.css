@@ -73,6 +73,8 @@ body {
 
 .author-row {
     height: 25px;
+    display: flex;
+    justify-content: center;
 }
 
 .author-col {
