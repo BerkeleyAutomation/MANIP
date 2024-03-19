@@ -178,36 +178,43 @@
             <div class="gallery-container">
                 <img src="images/step1.png" alt="Gallery Image" id="galleryImage" class="gallery-img">
                 <div>
-                <button id="prevBtn">Previous</button>
-                <button id="nextBtn">Next</button>
+                  <button id="prevBtn" class="disabled">Previous</button>
+                  <button id="nextBtn">Next</button>
                 </div>
-            </div>
-            
-            <script>
-            let currentImageIndex = 1;
-            const imageCount = 6; // Update this to reflect the actual number of images
-            
-            document.getElementById('prevBtn').addEventListener('click', function() {
-                currentImageIndex--;
-                if (currentImageIndex < 1) {
-                currentImageIndex = imageCount;
+              </div>
+              
+              <script>
+              let currentImageIndex = 1;
+              const imageCount = 6; // Update this to reflect the actual number of images
+              
+              function updateButtons() {
+                document.getElementById('prevBtn').classList.toggle('disabled', currentImageIndex === 1);
+                document.getElementById('nextBtn').classList.toggle('disabled', currentImageIndex === imageCount);
+              }
+              
+              document.getElementById('prevBtn').addEventListener('click', function() {
+                if (currentImageIndex > 1) {
+                  currentImageIndex--;
+                  updateImage();
                 }
-                updateImage();
-            });
-            
-            document.getElementById('nextBtn').addEventListener('click', function() {
-                currentImageIndex++;
-                if (currentImageIndex > imageCount) {
-                currentImageIndex = 1;
+              });
+              
+              document.getElementById('nextBtn').addEventListener('click', function() {
+                if (currentImageIndex < imageCount) {
+                  currentImageIndex++;
+                  updateImage();
                 }
-                updateImage();
-            });
-            
-            function updateImage() {
+              });
+              
+              function updateImage() {
                 const imagePath = `images/step${currentImageIndex}.png`;
                 document.getElementById('galleryImage').src = imagePath;
-            }
-            </script>
+                updateButtons();
+              }
+              
+              // Initial button state update
+              updateButtons();
+              </script>
             
             <!-- <iframe src="exported_plot.html" width="900" height="800"></iframe> -->
 
