@@ -164,6 +164,16 @@ body {
     font-size: 14px;
 }
 
+.gallery-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.gallery-img {
+    max-width: 90%;
+    height: auto;
+}
+
 #main-video {
     width: 90%;
     /* max-width: 750px; */
