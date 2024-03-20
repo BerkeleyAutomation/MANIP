@@ -253,6 +253,7 @@ body {
     font-weight: 400;
     letter-spacing: 0;
     text-align: left;
+    margin-inline: 65px;
 }
 
 .paragraph-center {
