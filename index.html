@@ -169,6 +169,13 @@
                     <strong class="link-labels-text">Generic MANIP Diagram (Google Draw)</strong>
                 </div>
             </div>
+
+            <br>
+            <video controls width="800px">              
+                <source src="MANIP_video.mp4" type="video/mp4" />
+            </video>
+            <br>
+
             <figure>
                 <img src="MANIP_Diagram.png" style="width: 100%;" alt="Manip Diagram"/>
                 <figcaption>MANIP Diagram.</figcaption>
@@ -211,9 +218,10 @@
                     cables.
                 </p>
             </div>
-
+            
+            <h1 id="abstract">Example Rollout</h1>
             <div class="gallery-container">
-                <img src="images/step1.png" alt="Gallery Image" id="galleryImage" class="gallery-img">
+                <img src="interactive_display/step1.png" alt="Gallery Image" id="galleryImage" class="gallery-img">
                 <div>
                   <button id="prevBtn" class="disabled">Previous</button>
                   <button id="nextBtn">Next</button>
@@ -222,7 +230,7 @@
               
               <script>
               let currentImageIndex = 1;
-              const imageCount = 6; // Update this to reflect the actual number of images
+              const imageCount = 11; // Update this to reflect the actual number of images
               
               function updateButtons() {
                 document.getElementById('prevBtn').classList.toggle('disabled', currentImageIndex === 1);
@@ -244,7 +252,7 @@
               });
               
               function updateImage() {
-                const imagePath = `images/step${currentImageIndex}.png`;
+                const imagePath = `interactive_display/step${currentImageIndex}.png`;
                 document.getElementById('galleryImage').src = imagePath;
                 updateButtons();
               }
